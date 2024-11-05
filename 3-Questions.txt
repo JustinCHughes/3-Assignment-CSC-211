@@ -1,0 +1,112 @@
+Chapter 4:
+
+1)
+
+!(a > b) --- (a <= b)
+!(a <= b && c <= d) --- (a > b) && (c > d)
+!(a + 1 == b + 1) --- (a + 1 != b + 1)
+!(a < 1 || b < 2 && c < 3) --- (a >= 1 || ((b >= 2) && (c >= 3))
+
+2)
+
+a > b && c < d --- !(a <= b) && !(c>=d) --- false
+a < ! b || !!a
+a + b < !c + c
+a - x || b * c && b / a
+
+3)
+
+6)
+
+0 1 0
+0 0 0
+1 -5 -10
+
+7)
+
+Errors:
+	- i is set to = 2 instead of == so it is not checking for equivalency
+	- i is initialized with a value before it arrives at the conditional, but
+		this could be implied as happening within the ......
+	- if i is not initialized before the conditional, this would cause an error
+		if it was actually checking for equivalency "=="
+	- Commentary below is if the "=" was "==" and assuming i was initialized
+
+The first code uses a while loop which will continue to loop as long as i == 2.
+Assuming i == 2 to start the while loop, i is then set to 0 so that it doesn't become
+and infinite loop. During the one iteration of the while loop, it will print out
+some even numbers. Caveat - if it remained as is with i = 2, it could cause an
+infinite loop.
+
+The second set of code uses an if statement where if i == 2 the function will
+print out some even numbers. Caveat - if it remained i = 2, it would always
+print out the even numbers.
+
+8)
+
+0 0 1
+1
+1
+0
+
+I'm surprised that the fourth option came up as "0" representing false. However,
+I assume that this has to do with the number being too large and thus the small
+0.001 is not being factored in when doing the comparison.
+
+9)
+
+Only the plast printf statement gets pritned outputting 7. This is because of
+the lack of brackets being used. The else statement is assumed by the computer
+to be attached to the second if statement is not activated by the first if
+statement coming up as false. Using brackets would fix this issue so that only
+the second if statement is nested within the if stateent. The final print
+statement is not subject to the first if statement is printed regardless of
+any conditionals.
+
+10)
+
+Compilation error listed below. The problems I see here are as follows:
+	- variable i was never initialized with a type or value
+	- a do while loop requires that the do statement comes first
+		and the while loop is at the end after the logic of
+		what is being done is completed
+	- variable j is never initialized with a type
+
+Compilation error:
+3-10HW.c: In function ‘main’:
+3-10HW.c:5:17: error: ‘i’ undeclared (first use in this function)
+    5 |         while(++i < LIMIT) do { /* syntax error */
+      |                 ^
+3-10HW.c:5:17: note: each undeclared identifier is reported only once for each function it appears in
+3-10HW.c:5:21: error: ‘LIMIT’ undeclared (first use in this function)
+    5 |         while(++i < LIMIT) do { /* syntax error */
+      |                     ^~~~~
+3-10HW.c:6:17: error: ‘j’ undeclared (first use in this function)
+    6 |                 j = 2 * i + 3;
+      |                 ^
+3-10HW.c:9:1: error: expected ‘while’ before ‘}’ token
+    9 | }
+      | ^
+3-10HW.c:9:1: error: expected declaration or statement at end of input
+
+11)
+
+Thought process:
+- Both values being negative causes it to immediately terminate
+- One value must be negative and remain negative
+- It is not possible for i or j to remain at 7 or 9
+- Incrementing will eventually lead to i and j both being positive
+	thus being positive
+
+I cannot think of a way to create an infinite loop with this conditional.
+
+14)
+
+15)
+
+20)
+
+29)
+
+30)
+
