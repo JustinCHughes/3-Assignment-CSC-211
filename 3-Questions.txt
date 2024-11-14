@@ -4,17 +4,28 @@ Chapter 4:
 
 !(a > b) --- (a <= b)
 !(a <= b && c <= d) --- (a > b) && (c > d)
-!(a + 1 == b + 1) --- (a + 1 != b + 1)
+!(a + 1 == b + 1) --- (a + 1 > b + 1) || (a + 1 < b + 1)
+	- Negation is not allowed so I assumed (a + 1 != b + 1) what not allowed
 !(a < 1 || b < 2 && c < 3) --- (a >= 1 || ((b >= 2) && (c >= 3))
 
 2)
 
-a > b && c < d --- !(a <= b) && !(c>=d) --- false
-a < ! b || !!a
-a + b < !c + c
-a - x || b * c && b / a
+a > b && c < d --- !(a <= b) && !(c>=d) --- I assume d was intended to b because d
+					is never declared. Value = False
+a < ! b || !!a --- a > b || a --- True
+a + b < !c + c --- a + b > c + c --- False
+a - x || b * c && b / a --- ((a - x) || b * c) && ((a - x) || b / a)) - True
 
 3)
+
+Please reference ./4-Chapter/3-Question/3-3HW.c
+
+The program unfortunately counts the enter key as a valid character to count
+so even if you enter a single digit "1", it will increment both variables
+as the "\n" character increments the other_cnt variable. I considered creating
+an else if statement for this exact letter, but because it is technically a
+different character being input, I left it as is and allowed it to cause
+an increment.
 
 6)
 
@@ -92,21 +103,46 @@ Compilation error:
 11)
 
 Thought process:
-- Both values being negative causes it to immediately terminate
+- Both values being negative or positive causes it to immediately terminate
 - One value must be negative and remain negative
 - It is not possible for i or j to remain at 7 or 9
 - Incrementing will eventually lead to i and j both being positive
-	thus being positive
+	thus terminating the while loop
 
 I cannot think of a way to create an infinite loop with this conditional.
 
 14)
 
+This prints a never ending cycle of '243243243243243243....'
+
 15)
+
+Every statement ends in a semicolon - True
+Every statement contains at least one semicolon - True
+Every statement contains at most one semicolon - False(?)
+	- I answer True to this on the exam and got it wrong so I guess it is false.
+	- My assumption is that this means that for loops count as one
+	statement and they of course contain two semicolons
+There exists a statement with precisely 33 semicolons - False
+There exists a statement made up of 35 characters that contains 33 semicolons - False
 
 20)
 
+My initial guesses:
+
+777 777 0
+777 778 1
+
+Actual as per program:
+
+0 0 0
+0 0 1
+
 29)
 
+Please reference ./4-Chapter/29-Question/3-29HW.c
+
 30)
+
+Please reference ./4-Chapter/30-Question/3-30HW.c
 
